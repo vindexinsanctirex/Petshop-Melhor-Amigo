@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>🐾 Bem-vindo ao Petshop "Melhor Amigo"!</h1>
+            <p class="hero-text">
+                No Petshop "Melhor Amigo", nós entendemos que seu animal de estimação é 
+                mais do que apenas um bichinho, é um membro especial da sua família.
+            </p>
+            <a href="{% url 'produtos' %}" class="btn btn-primary btn-large">
+                Conheça Nossos Produtos
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Serviços Section -->
+<section class="services">
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-cut fa-3x"></i>
+                <h3>Tosa Especializada</h3>
+                <p>Cortes personalizados e cuidados especiais para seu pet ficar impecável.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shower fa-3x"></i>
+                <h3>Banho Relaxante</h3>
+                <p>Produtos de qualidade para uma limpeza profunda e refrescante.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bone fa-3x"></i>
+                <h3>Ração Premium</h3>
+                <p>Nutrição balanceada com ingredientes de alta qualidade.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destaque Section -->
+<section class="highlight">
+    <div class="container">
+        <div class="highlight-content">
+            <h2>Cuidando do seu melhor amigo como se fosse nosso</h2>
+            <p>
+                Com uma equipe dedicada e apaixonada por animais, nossos profissionais 
+                treinados estão prontos para oferecer os melhores cuidados para o seu pet.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
