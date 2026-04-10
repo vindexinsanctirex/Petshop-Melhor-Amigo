@@ -4,56 +4,276 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero Section com Slogan -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>🐾 Bem-vindo ao Petshop "Melhor Amigo"!</h1>
+            <div class="hero-badge">🐾 Desde 2020</div>
+            <h1>Melhor Amigo</h1>
+            <p class="hero-slogan">Cuidando do seu melhor amigo como se fosse nosso</p>
             <p class="hero-text">
                 No Petshop "Melhor Amigo", nós entendemos que seu animal de estimação é 
                 mais do que apenas um bichinho, é um membro especial da sua família.
             </p>
-            <a href="{% url 'produtos' %}" class="btn btn-primary btn-large">
-                Conheça Nossos Produtos
-            </a>
+            <div class="hero-buttons">
+                <a href="{% url 'produtos' %}" class="btn btn-primary btn-large">
+                    Conheça Nossos Produtos <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="{% url 'contato' %}" class="btn btn-outline btn-large">
+                    Fale Conosco <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Sobre Nós / Destaque -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <span class="section-tag">Nossa História</span>
+                <h2>Compromisso com o bem-estar do seu pet</h2>
+                <p>
+                    Com uma equipe dedicada e apaixonada por animais, nossos profissionais 
+                    treinados estão prontos para oferecer os melhores cuidados para o seu pet. 
+                    Desde serviços de tosa profissional, onde deixaremos seu animalzinho com um 
+                    visual impecável, até a limpeza e higienização completa, proporcionamos um 
+                    ambiente seguro e tranquilo para que seu amigo se sinta confortável durante 
+                    todo o processo.
+                </p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Equipe especializada</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Ambiente seguro</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Produtos premium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.pexels.com/photos/7469215/pexels-photo-7469215.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     alt="Cachorro feliz no petshop" 
+                     class="rounded-image">
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Serviços Section -->
-<section class="services">
+<!-- Serviços Principais -->
+<section class="services-highlight">
     <div class="container">
-        <h2>Nossos Serviços</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-cut fa-3x"></i>
-                <h3>Tosa Especializada</h3>
-                <p>Cortes personalizados e cuidados especiais para seu pet ficar impecável.</p>
+        <div class="section-header">
+            <span class="section-tag">O que oferecemos</span>
+            <h2>Serviços de Excelência para seu Melhor Amigo</h2>
+            <p>Confira nossos principais serviços, pensados especialmente para o bem-estar do seu pet</p>
+        </div>
+        
+        <div class="services-grid-detailed">
+            <!-- Tosa Especializada -->
+            <div class="service-card-detailed">
+                <div class="service-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Serviço de Tosa Especializada</h3>
+                <p>
+                    Proporcionamos serviços profissionais de tosa para cães de todas as raças. 
+                    Nossos tosadores experientes e qualificados utilizam técnicas avançadas para 
+                    garantir que seu pet tenha um visual impecável.
+                </p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Cortes personalizados</li>
+                    <li><i class="fas fa-check"></i> Higienização completa</li>
+                    <li><i class="fas fa-check"></i> Limpeza de ouvidos</li>
+                    <li><i class="fas fa-check"></i> Corte de unhas</li>
+                </ul>
+                <a href="{% url 'produtos' %}#tosa" class="btn-link">Saiba mais <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class="service-card">
-                <i class="fas fa-shower fa-3x"></i>
+            
+            <!-- Banho Relaxante -->
+            <div class="service-card-detailed">
+                <div class="service-icon">
+                    <i class="fas fa-shower"></i>
+                </div>
                 <h3>Banho Relaxante</h3>
-                <p>Produtos de qualidade para uma limpeza profunda e refrescante.</p>
+                <p>
+                    Utilizamos produtos de qualidade, seguros e adequados para cada tipo de pelagem, 
+                    garantindo uma limpeza profunda e refrescante. Nossos profissionais carinhosos 
+                    proporcionam um ambiente tranquilo e seguro.
+                </p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Produtos hipoalergênicos</li>
+                    <li><i class="fas fa-check"></i> Secagem profissional</li>
+                    <li><i class="fas fa-check"></i> Pelagem macia e brilhante</li>
+                    <li><i class="fas fa-check"></i> Perfume especial</li>
+                </ul>
+                <a href="{% url 'produtos' %}#banho" class="btn-link">Saiba mais <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class="service-card">
-                <i class="fas fa-bone fa-3x"></i>
+            
+            <!-- Ração Premium -->
+            <div class="service-card-detailed">
+                <div class="service-icon">
+                    <i class="fas fa-bone"></i>
+                </div>
                 <h3>Ração Premium</h3>
-                <p>Nutrição balanceada com ingredientes de alta qualidade.</p>
+                <p>
+                    Oferecemos uma ampla variedade de rações de alta qualidade e alimentos 
+                    balanceados, adaptados às necessidades individuais de cada animal. Nossos 
+                    especialistas estão disponíveis para fornecer orientação personalizada.
+                </p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Ingredientes selecionados</li>
+                    <li><i class="fas fa-check"></i> Opções para todas as idades</li>
+                    <li><i class="fas fa-check"></i> Dietas especiais</li>
+                    <li><i class="fas fa-check"></i> Orientação nutricional</li>
+                </ul>
+                <a href="{% url 'produtos' %}#racao" class="btn-link">Saiba mais <i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Destaque Section -->
-<section class="highlight">
+<!-- Promoções e Ofertas -->
+<section class="promo-section">
     <div class="container">
-        <div class="highlight-content">
-            <h2>Cuidando do seu melhor amigo como se fosse nosso</h2>
-            <p>
-                Com uma equipe dedicada e apaixonada por animais, nossos profissionais 
-                treinados estão prontos para oferecer os melhores cuidados para o seu pet.
-            </p>
+        <div class="promo-banner">
+            <div class="promo-content">
+                <span class="promo-tag">🔥 Oferta Especial</span>
+                <h2>Primeiro Banho com 20% de Desconto!</h2>
+                <p>Para novos clientes, oferecemos 20% de desconto no primeiro banho do seu pet. Aproveite!</p>
+                <div class="promo-timer" id="promoTimer">
+                    <div class="timer-block">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">Dias</span>
+                    </div>
+                    <div class="timer-block">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">Horas</span>
+                    </div>
+                    <div class="timer-block">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">Min</span>
+                    </div>
+                </div>
+                <a href="{% url 'contato' %}" class="btn btn-primary">Agendar Agora</a>
+            </div>
+            <div class="promo-image">
+                <img src="https://images.pexels.com/photos/6131497/pexels-photo-6131497.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     alt="Cão tomando banho">
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Depoimentos -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Depoimentos</span>
+            <h2>O que dizem nossos clientes</h2>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Meu Thor adora o banho e tosa no Melhor Amigo! Equipe super atenciosa e profissional."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
+                    <div>
+                        <h4>Ana Silva</h4>
+                        <span>Tutora do Thor 🐕</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"As rações premium são de excelente qualidade. Minha gata Luna nunca esteve tão saudável!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                    <div>
+                        <h4>Carlos Mendes</h4>
+                        <span>Tutor da Luna 🐱</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Ambiente limpo, cheiroso e super seguro. Deixo meus dogs sem preocupação alguma!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+                    <div>
+                        <h4>Patrícia Costa</h4>
+                        <span>Tutora do Max e Bella 🐕🐕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Final -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto para cuidar do seu melhor amigo?</h2>
+            <p>Agende uma visita ou entre em contato conosco. Seu pet merece o melhor!</p>
+            <div class="cta-buttons">
+                <a href="{% url 'contato' %}" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-check"></i> Agendar Horário
+                </a>
+                <a href="tel:+5511999999999" class="btn btn-outline btn-large">
+                    <i class="fas fa-phone"></i> Ligar Agora
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Timer para a promoção
+document.addEventListener('DOMContentLoaded', function() {
+    // Definir data final (7 dias a partir de hoje)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7);
+    
+    function updateTimer() {
+        const now = new Date();
+        const diff = endDate - now;
+        
+        if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        }
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 60000); // Atualizar a cada minuto
+});
+</script>
 {% endblock %}

@@ -1,11 +1,390 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Produtos{% endblock %}
+{% block title %}Produtos e Serviços{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="page-title">Nossos Produtos e Serviços</h1>
-    <p>Produtos em breve...</p>
-</div>
+<!-- Hero Produtos -->
+<section class="page-hero">
+    <div class="container">
+        <h1>Nossos Produtos e Serviços</h1>
+        <p>Tudo o que seu melhor amigo precisa em um só lugar</p>
+    </div>
+</section>
+
+<!-- Categorias de Produtos -->
+<section class="products-section">
+    <div class="container">
+        <!-- Tabs de Navegação -->
+        <div class="products-tabs">
+            <button class="tab-btn active" data-tab="limpeza">
+                <i class="fas fa-shower"></i> Limpeza & Banho
+            </button>
+            <button class="tab-btn" data-tab="tosa">
+                <i class="fas fa-cut"></i> Tosa Especializada
+            </button>
+            <button class="tab-btn" data-tab="racao">
+                <i class="fas fa-bone"></i> Ração Premium
+            </button>
+            <button class="tab-btn" data-tab="brinquedos">
+                <i class="fas fa-baseball-ball"></i> Brinquedos
+            </button>
+        </div>
+
+        <!-- Conteúdo das Tabs -->
+        <!-- LIMPEZA E BANHO -->
+        <div class="tab-content active" id="limpeza">
+            <div class="section-header">
+                <span class="section-tag">Higiene e Bem-estar</span>
+                <h2>Produtos de Limpeza e Banho</h2>
+                <p>Produtos selecionados para manter seu pet sempre limpo e cheiroso</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Banho Relaxante -->
+                <div class="product-card featured">
+                    <div class="product-badge">⭐ Mais Vendido</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6131497/pexels-photo-6131497.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Banho Relaxante">
+                    </div>
+                    <div class="product-info">
+                        <h3>Banho Relaxante</h3>
+                        <p class="product-description">
+                            No Petshop "Melhor Amigo", oferecemos banhos relaxantes para cães e gatos. 
+                            Utilizamos produtos de qualidade, seguros e adequados para cada tipo de pelagem, 
+                            garantindo uma limpeza profunda e refrescante.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Produtos hipoalergênicos</li>
+                            <li><i class="fas fa-check-circle"></i> Secagem profissional</li>
+                            <li><i class="fas fa-check-circle"></i> Pelagem macia e brilhante</li>
+                            <li><i class="fas fa-check-circle"></i> Perfume especial</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 49,90</span>
+                            <a href="{% url 'contato' %}" class="btn btn-primary">
+                                Agendar <i class="fas fa-calendar-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shampoo Especial -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/7269427/pexels-photo-7269427.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Shampoo Especial">
+                    </div>
+                    <div class="product-info">
+                        <h3>Shampoo Hipoalergênico</h3>
+                        <p class="product-description">
+                            Shampoo especial para pets com pele sensível. Fórmula suave que limpa 
+                            sem irritar, deixando a pelagem macia e brilhante.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Dermatologicamente testado</li>
+                            <li><i class="fas fa-check-circle"></i> Sem parabenos</li>
+                            <li><i class="fas fa-check-circle"></i> pH balanceado</li>
+                            <li><i class="fas fa-check-circle"></i> Disponível 500ml</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 39,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Shampoo Hipoalergênico')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Condicionador -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/7269431/pexels-photo-7269431.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Condicionador">
+                    </div>
+                    <div class="product-info">
+                        <h3>Condicionador Desembaraçante</h3>
+                        <p class="product-description">
+                            Facilita a escovação e remove nós, deixando os pelos do seu pet 
+                            sedosos e fáceis de pentear. Ideal para pets de pelo longo.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Fácil enxágue</li>
+                            <li><i class="fas fa-check-circle"></i> Fragrância duradoura</li>
+                            <li><i class="fas fa-check-circle"></i> Com óleo de argan</li>
+                            <li><i class="fas fa-check-circle"></i> Disponível 500ml</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 42,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Condicionador')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOSA ESPECIALIZADA -->
+        <div class="tab-content" id="tosa">
+            <div class="section-header">
+                <span class="section-tag">Estética Animal</span>
+                <h2>Serviço de Tosa Especializada</h2>
+                <p>Cuidados profissionais para deixar seu pet ainda mais bonito</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Tosa Completa -->
+                <div class="product-card featured">
+                    <div class="product-badge">⭐ Serviço Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6816856/pexels-photo-6816856.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Tosa Especializada">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tosa Especializada Completa</h3>
+                        <p class="product-description">
+                            Proporcionamos serviços profissionais de tosa para cães de todas as raças. 
+                            Nossos tosadores experientes e qualificados utilizam técnicas avançadas 
+                            para garantir que seu pet tenha um visual impecável.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Corte personalizado por raça</li>
+                            <li><i class="fas fa-check-circle"></i> Higienização completa</li>
+                            <li><i class="fas fa-check-circle"></i> Limpeza de ouvidos</li>
+                            <li><i class="fas fa-check-circle"></i> Corte de unhas</li>
+                            <li><i class="fas fa-check-circle"></i> Perfumação final</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 69,90</span>
+                            <a href="{% url 'contato' %}" class="btn btn-primary">
+                                Agendar Tosa <i class="fas fa-scissors"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tosa Higiênica -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6816865/pexels-photo-6816865.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Tosa Higiênica">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tosa Higiênica</h3>
+                        <p class="product-description">
+                            Serviço essencial para manter a higiene do seu pet. Inclui tosa nas 
+                            áreas íntimas, barriga e patas, prevenindo sujeira e infecções.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Áreas íntimas</li>
+                            <li><i class="fas fa-check-circle"></i> Barriga</li>
+                            <li><i class="fas fa-check-circle"></i> Patas e coxins</li>
+                            <li><i class="fas fa-check-circle"></i> Duração: 30 min</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 39,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Tosa Higiênica')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RAÇÃO PREMIUM -->
+        <div class="tab-content" id="racao">
+            <div class="section-header">
+                <span class="section-tag">Nutrição Animal</span>
+                <h2>Ração Premium</h2>
+                <p>Nutrição balanceada para uma vida saudável</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Ração Premium - Destaque -->
+                <div class="product-card featured">
+                    <div class="product-badge">🏆 Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6869651/pexels-photo-6869651.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Ração Premium">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ração Premium - Cães Adultos</h3>
+                        <p class="product-description">
+                            No Petshop "Melhor Amigo", oferecemos uma seleção de rações premium 
+                            para cães e gatos. Essas rações são formuladas com ingredientes de 
+                            alta qualidade, garantindo uma nutrição balanceada e adequada.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Ingredientes selecionados</li>
+                            <li><i class="fas fa-check-circle"></i> Proteína de alta qualidade</li>
+                            <li><i class="fas fa-check-circle"></i> Sem corantes artificiais</li>
+                            <li><i class="fas fa-check-circle"></i> Ômega 3 e 6 para pelagem</li>
+                            <li><i class="fas fa-check-circle"></i> Disponível 1kg, 3kg, 10kg</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 89,90</span>
+                            <button class="btn btn-primary" onclick="solicitarInfo('Ração Premium Cães')">
+                                Comprar Agora <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ração Gatos -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6869643/pexels-photo-6869643.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Ração Gatos">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ração Premium - Gatos Adultos</h3>
+                        <p class="product-description">
+                            Fórmula especial para felinos, rica em taurina e nutrientes 
+                            essenciais para a saúde do seu gato. Disponível para diferentes 
+                            idades e necessidades específicas.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Rico em taurina</li>
+                            <li><i class="fas fa-check-circle"></i> Controle de pH urinário</li>
+                            <li><i class="fas fa-check-circle"></i> Pelagem brilhante</li>
+                            <li><i class="fas fa-check-circle"></i> Disponível 1kg, 3kg, 7.5kg</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 79,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Ração Premium Gatos')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ração Filhotes -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6869666/pexels-photo-6869666.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Ração Filhotes">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ração Premium - Filhotes</h3>
+                        <p class="product-description">
+                            Nutrição completa para filhotes em fase de crescimento. 
+                            Fórmula enriquecida com vitaminas e minerais essenciais.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> DHA para desenvolvimento cerebral</li>
+                            <li><i class="fas fa-check-circle"></i> Cálcio para ossos fortes</li>
+                            <li><i class="fas fa-check-circle"></i> Proteínas de fácil digestão</li>
+                            <li><i class="fas fa-check-circle"></i> Disponível 1kg, 3kg</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 94,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Ração Filhotes')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BRINQUEDOS INTERATIVOS -->
+        <div class="tab-content" id="brinquedos">
+            <div class="section-header">
+                <span class="section-tag">Diversão Garantida</span>
+                <h2>Brinquedos Interativos</h2>
+                <p>Estimulação mental e física para seu pet</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6869635/pexels-photo-6869635.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Brinquedos Interativos">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kit Brinquedos Interativos</h3>
+                        <p class="product-description">
+                            Valorizamos o enriquecimento e a diversão dos animais, por isso 
+                            oferecemos uma variedade de brinquedos interativos. Esses brinquedos 
+                            estimulam a mente e o corpo do seu pet.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check-circle"></i> Estimulação mental</li>
+                            <li><i class="fas fa-check-circle"></i> Exercício físico</li>
+                            <li><i class="fas fa-check-circle"></i> Material durável</li>
+                            <li><i class="fas fa-check-circle"></i> Para cães e gatos</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 29,90</span>
+                            <button class="btn btn-outline" onclick="solicitarInfo('Brinquedos')">
+                                Solicitar Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner de Consultoria Nutricional -->
+<section class="consultoria-banner">
+    <div class="container">
+        <div class="banner-content">
+            <div class="banner-text">
+                <i class="fas fa-user-md fa-3x"></i>
+                <h3>Orientação Nutricional Personalizada</h3>
+                <p>
+                    Sabemos que a alimentação é fundamental para a saúde do seu pet. 
+                    Nossos especialistas estão disponíveis para fornecer orientação 
+                    personalizada e ajudá-lo a escolher a melhor opção para o seu amiguinho.
+                </p>
+                <a href="{% url 'contato' %}" class="btn btn-primary">
+                    Agendar Consultoria <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Função para solicitar informações
+function solicitarInfo(produto) {
+    alert(`Obrigado pelo interesse em: ${produto}\n\nPor favor, entre em contato conosco para mais informações!\n\n📞 (11) 99999-9999\n✉️ contato@melhoramigo.com.br`);
+}
+
+// Tabs functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to current button and content
+            this.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // Verificar se há hash na URL para abrir tab específica
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const tabBtn = document.querySelector(`[data-tab="${hash}"]`);
+        if (tabBtn) {
+            tabBtn.click();
+        }
+    }
+});
+</script>
 {% endblock %}

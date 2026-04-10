@@ -1,11 +1,427 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Galeria{% endblock %}
+{% block title %}Galeria de Fotos{% endblock %}
+
+{% block extra_css %}
+<!-- Lightbox CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="page-title">Galeria de Fotos</h1>
-    <p>Fotos em breve...</p>
-</div>
+<!-- Hero Galeria -->
+<section class="page-hero galeria-hero">
+    <div class="container">
+        <h1>Galeria de Fotos</h1>
+        <p>Conheça alguns dos nossos clientes especiais que já passaram pelo Melhor Amigo</p>
+    </div>
+</section>
+
+<!-- Introdução da Galeria -->
+<section class="galeria-intro">
+    <div class="container">
+        <div class="intro-content">
+            <div class="intro-text">
+                <span class="section-tag">📸 Nossos Momentos</span>
+                <h2>Amor e Cuidado em Cada Foto</h2>
+                <p>
+                    Nossa galeria de fotos é o reflexo do nosso amor e cuidado pelos animais. 
+                    Lá, você poderá ver alguns dos adoráveis clientes que já passaram pelo nosso 
+                    petshop. É um verdadeiro prazer atender a cada um deles e contribuir para 
+                    o seu bem-estar e felicidade.
+                </p>
+                <p>
+                    Cada sorriso, cada olhar e cada rabinho abanando nos motiva a continuar 
+                    oferecendo o melhor para seu melhor amigo!
+                </p>
+            </div>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Clientes Felizes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1000">0</span>
+                    <span class="stat-label">Banhos Realizados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="300">0</span>
+                    <span class="stat-label">Tosas Feitas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filtros da Galeria -->
+<section class="galeria-filtros">
+    <div class="container">
+        <div class="filtro-buttons">
+            <button class="filtro-btn active" data-filter="todos">
+                <i class="fas fa-paw"></i> Todos
+            </button>
+            <button class="filtro-btn" data-filter="cachorros">
+                <i class="fas fa-dog"></i> Cachorros
+            </button>
+            <button class="filtro-btn" data-filter="gatos">
+                <i class="fas fa-cat"></i> Gatos
+            </button>
+            <button class="filtro-btn" data-filter="banho-tosa">
+                <i class="fas fa-shower"></i> Banho & Tosa
+            </button>
+            <button class="filtro-btn" data-filter="antes-depois">
+                <i class="fas fa-magic"></i> Antes & Depois
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Grid da Galeria -->
+<section class="galeria-grid-section">
+    <div class="container">
+        <div class="galeria-grid">
+            <!-- Cachorros -->
+            <div class="galeria-item" data-category="cachorros todos">
+                <a href="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Thor - Golden Retriever">
+                    <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Thor - Golden Retriever">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Thor</h4>
+                            <p>Golden Retriever • 3 anos</p>
+                            <span class="favorite-badge">⭐ Cliente VIP</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="cachorros banho-tosa todos">
+                <a href="https://images.pexels.com/photos/6131497/pexels-photo-6131497.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Luna - Spitz Alemão">
+                    <img src="https://images.pexels.com/photos/6131497/pexels-photo-6131497.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Luna - Spitz Alemão">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Luna</h4>
+                            <p>Spitz Alemão • 2 anos</p>
+                            <span class="service-badge">Banho Relaxante</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="cachorros todos">
+                <a href="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Max - Shih Tzu">
+                    <img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Max - Shih Tzu">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Max</h4>
+                            <p>Shih Tzu • 5 anos</p>
+                            <span class="favorite-badge">⭐ Cliente VIP</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Gatos -->
+            <div class="galeria-item" data-category="gatos todos">
+                <a href="https://images.pexels.com/photos/104827/cat-pet-feline-104827.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Mingau - Gato Persa">
+                    <img src="https://images.pexels.com/photos/104827/cat-pet-feline-104827.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Mingau - Gato Persa">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Mingau</h4>
+                            <p>Gato Persa • 4 anos</p>
+                            <span class="favorite-badge">⭐ Cliente VIP</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="gatos banho-tosa todos">
+                <a href="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Nina - Siamês">
+                    <img src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Nina - Siamês">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Nina</h4>
+                            <p>Siamês • 2 anos</p>
+                            <span class="service-badge">Tosa Higiênica</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="gatos todos">
+                <a href="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Bolinha - Gato Rajado">
+                    <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Bolinha - Gato Rajado">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Bolinha</h4>
+                            <p>SRD • 1 ano</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Banho & Tosa -->
+            <div class="galeria-item" data-category="cachorros banho-tosa todos">
+                <a href="https://images.pexels.com/photos/6816856/pexels-photo-6816856.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Tosa Especializada - Antes">
+                    <img src="https://images.pexels.com/photos/6816856/pexels-photo-6816856.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Tosa Especializada">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Mel</h4>
+                            <p>Poodle • Tosa Especializada</p>
+                            <span class="service-badge">Transformação</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="cachorros banho-tosa todos">
+                <a href="https://images.pexels.com/photos/7269427/pexels-photo-7269427.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Banho Premium">
+                    <img src="https://images.pexels.com/photos/7269427/pexels-photo-7269427.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Banho Premium">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Belinha</h4>
+                            <p>Maltês • Banho Premium</p>
+                            <span class="service-badge">Pelagem Brilhante</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Antes & Depois -->
+            <div class="galeria-item" data-category="cachorros antes-depois todos">
+                <a href="https://images.pexels.com/photos/7469215/pexels-photo-7469215.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Transformação Completa - Depois">
+                    <img src="https://images.pexels.com/photos/7469215/pexels-photo-7469215.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Transformação - Depois">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Bob</h4>
+                            <p>Vira-lata • Transformação Total</p>
+                            <span class="transformation-badge">✨ Antes & Depois</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="gatos antes-depois todos">
+                <a href="https://images.pexels.com/photos/6869651/pexels-photo-6869651.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Gato Após Tosa Higiênica">
+                    <img src="https://images.pexels.com/photos/6869651/pexels-photo-6869651.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Gato após tosa">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Garfield</h4>
+                            <p>Gato Laranja • Tosa Higiênica</p>
+                            <span class="transformation-badge">✨ Antes & Depois</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mais fotos -->
+            <div class="galeria-item" data-category="cachorros todos">
+                <a href="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Rex - Pastor Alemão">
+                    <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Rex - Pastor Alemão">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Rex</h4>
+                            <p>Pastor Alemão • 3 anos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="galeria-item" data-category="cachorros todos">
+                <a href="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                   data-lightbox="galeria" 
+                   data-title="Princesa - Yorkshire">
+                    <img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Princesa - Yorkshire">
+                    <div class="galeria-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Princesa</h4>
+                            <p>Yorkshire • 6 anos</p>
+                            <span class="favorite-badge">⭐ Cliente VIP</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button class="btn btn-outline btn-large" id="loadMoreBtn">
+                <i class="fas fa-plus-circle"></i> Carregar Mais Fotos
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimento em Vídeo/Área de Destaque -->
+<section class="galeria-destaque">
+    <div class="container">
+        <div class="destaque-card">
+            <div class="destaque-content">
+                <i class="fas fa-heart fa-3x"></i>
+                <h3>Compartilhe seu Momento!</h3>
+                <p>
+                    Seu pet já passou pelo Melhor Amigo? Envie uma foto dele para nossa galeria! 
+                    Adoramos ver nossos clientes felizes e bem cuidados.
+                </p>
+                <a href="{% url 'contato' %}" class="btn btn-primary">
+                    Enviar Foto <i class="fas fa-camera"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Lightbox JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+<script>
+// Configuração do Lightbox
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'albumLabel': 'Imagem %1 de %2',
+    'fadeDuration': 300,
+    'imageFadeDuration': 300,
+    'positionFromTop': 50
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtros da Galeria
+    const filterBtns = document.querySelectorAll('.filtro-btn');
+    const galleryItems = document.querySelectorAll('.galeria-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'todos' || category.includes(filter)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+    
+    // Contador animado
+    const stats = document.querySelectorAll('.stat-number');
+    let animated = false;
+    
+    function animateStats() {
+        if (animated) return;
+        
+        stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            let current = 0;
+            const increment = target / 50;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    stat.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current);
+                }
+            }, 20);
+        });
+        
+        animated = true;
+    }
+    
+    // Animar quando visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+            }
+        });
+    });
+    
+    const statsSection = document.querySelector('.intro-stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+    
+    // Load More Button (simulação)
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simular carregamento de mais fotos
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Carregando...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-check-circle"></i> Fim da Galeria';
+                this.disabled = true;
+                this.style.opacity = '0.7';
+            }, 1500);
+        });
+    }
+    
+    // Adicionar legenda ao passar mouse (já feito via CSS)
+    console.log('🐾 Galeria do Melhor Amigo carregada!');
+});
+</script>
 {% endblock %}
